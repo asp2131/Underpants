@@ -147,6 +147,29 @@ describe('Underpants Lite', function() {
     // });
   });
 
+  describe('map', function() {
+    var inputArray = ["a", "b", "c", "d"];
+    var inputObject = { a: 1, b: 2, c: 3, d: 4 };
+    it("Should map through arrays.", function() {
+      expect(_.map(inputArray, function(e, i, a) {
+        return e + i * a.length;
+      })).to.eql(["a0", "b4", "c8", "d12"]);
+    });
+    it("Should map through Objects.", function() {
+      expect(_.map(inputObject, function(v, k, o) {
+        return k + v * Object.keys(o).length;
+      })).to.eql(["a4", "b8", "c12", "d16"]);
+    });
+    it("Should not have side effects.", function() {
+      expect([inputArray, inputObject]).to.eql([["a", "b", "c", "d"], { a: 1, b: 2, c: 3, d: 4 }]);
+    });
+    // TODO: add test to see if each is used
+    // xit('should use the _.each function', function() {
+    //   console.log(_.map.toString());
+    //   expect(_.map.toString()).to.contain('_.each');
+    // });
+  });
+  
   describe('reject', function() {
     var inputData = ["a", 1, "b", 2, "c", 4];
     it("Should reject elements in an array.", function() {
@@ -179,28 +202,6 @@ describe('Underpants Lite', function() {
     // });
   });
 
-  describe('map', function() {
-    var inputArray = ["a", "b", "c", "d"];
-    var inputObject = { a: 1, b: 2, c: 3, d: 4 };
-    it("Should map through arrays.", function() {
-      expect(_.map(inputArray, function(e, i, a) {
-        return e + i * a.length;
-      })).to.eql(["a0", "b4", "c8", "d12"]);
-    });
-    it("Should map through Objects.", function() {
-      expect(_.map(inputObject, function(v, k, o) {
-        return k + v * Object.keys(o).length;
-      })).to.eql(["a4", "b8", "c12", "d16"]);
-    });
-    it("Should not have side effects.", function() {
-      expect([inputArray, inputObject]).to.eql([["a", "b", "c", "d"], { a: 1, b: 2, c: 3, d: 4 }]);
-    });
-    // TODO: add test to see if each is used
-    // xit('should use the _.each function', function() {
-    //   console.log(_.map.toString());
-    //   expect(_.map.toString()).to.contain('_.each');
-    // });
-  });
 
   describe('every', function() {
     var inputData = [2, 4, 6, 7, 8];

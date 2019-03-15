@@ -28,39 +28,51 @@ describe('Underpants Lite', function() {
   });
 
   describe('first', function() {
-    it("Should return the first element if no numerical argument is given.", function() {
-      expect(_.first(["a","b","c"])).to.eql("a");
-    });
-    it("Should accept an argument representing the number of items to include in the output.", function() {
+    it("Should return the first <number> of elements from <array> in a new Array.", function() {
       expect(_.first(["a","b","c"],2)).to.eql(["a","b"]);
-    });
-    it("Should return empty list if numerical argument is not a positive number.", function() {
-      expect(_.first(["a","b","c"], -1)).to.eql([]);
-    });
-    it("Should return the whole array if numerical argument is greater than the array's length.", function() {
-      expect(_.first(["a","b","c"], 5)).to.eql(["a","b","c"]);
+      expect(_.first([10,20,30,40,50],3)).to.eql([10,20,30]);
     });
     it("Should return empty array if the array param is not an array.", function() {
       expect(_.first({a:"b"}, 2)).to.eql([]);
+      expect(_.first("hi",3)).to.eql([]);
+    });
+    it("Should return the first element if no numerical argument is given.", function() {
+      expect(_.first(["a","b","c"])).to.eql("a");
+      expect(_.first([10,20,30,40,50])).to.eql(10);
+    });
+    it("Should return empty list if numerical argument is not a positive number.", function() {
+      expect(_.first(["a","b","c"], -1)).to.eql([]);
+      expect(_.first([10,20,30,40,50],-3)).to.eql([]);
+    });
+    it("Should return the whole array if numerical argument is greater than the array's length.", function() {
+      expect(_.first(["a","b","c"], 5)).to.eql(["a","b","c"]);
+      expect(_.first([10,20,30,40,50],30)).to.eql([10,20,30,40,50]);
     });
   });
 
   describe('last', function() {
-    it("Should return the last element if no numerical argument is given.", function() {
-      expect(_.last(["a","b","c"])).to.eql("c");
-    });
-    it("Should accept an argument representing the number of items to include in the output.", function() {
+    it("Should return the last <number> of elements from <array> in a new Array.", function() {
       expect(_.last(["a","b","c"], 2)).to.eql(["b","c"]);
-    });
-    it("Should return empty list if numerical argument is not a positive number.", function() {
-      expect(_.last(["a","b","c"], -1)).to.eql([]);
-    });
-    it("Should return the whole array if numerical argument is greater than the array's length.", function() {
-      expect(_.last(["a","b","c"], 5)).to.eql(["a","b","c"]);
+      expect(_.last([10,20,30,40,50],3)).to.eql([30, 40, 50]);
     });
     it("Should return empty array if the array param is not an array.", function() {
       expect(_.last({a:"b"}, 2)).to.eql([]);
+      expect(_.last("hi",3)).to.eql([]);
     });
+    it("Should return the last element if no numerical argument is given.", function() {
+      expect(_.last(["a","b","c"])).to.eql("c");
+      expect(_.last([10,20,30,40,50])).to.eql(50);
+    });
+    
+    it("Should return empty list if numerical argument is not a positive number.", function() {
+      expect(_.last(["a","b","c"], -1)).to.eql([]);
+      expect(_.last([10,20,30,40,50], -3)).to.eql([]);
+    });
+    it("Should return the whole array if numerical argument is greater than the array's length.", function() {
+      expect(_.last(["a","b","c"], 5)).to.eql(["a","b","c"]);
+      expect(_.last([10,20,30,40,50],30)).to.eql([10,20,30,40,50]);
+    });
+    
   });
   
   describe('indexOf', function() {

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "pretest": "npm install",
-    "test": "mocha ./test/underpants.spec.js || :",
+    "test": "mocha ./test/underpants-lite.spec.js || :",
     "posttest": "rm -rf ./test ./node_modules"
   },
   "repository": {

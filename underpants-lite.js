@@ -94,12 +94,12 @@ var _ = {};
 * Objectives:
 *   1) Return true if <array> contains <value>
 *   2) Return false otherwise
-*   3) You must use the ternary operator in your implementation.
 * Edge Cases:
 *   1) did you use === ?
 *   2) what if no <value> is given?
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
+*   _.contains([1,"two", 3.14], "three") -> false
 */
 
 
@@ -115,7 +115,7 @@ var _ = {};
 *      with the arguments:
 *         the property's value, it's key, <collection>
 * Examples:
-*   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
+*   _.each(["a","b","c"], function(e,i,a){ console.log(e); });
 *      -> should log "a" "b" "c" to the console
 */
 
@@ -132,7 +132,7 @@ var _ = {};
 * Edge Cases:
 *   1) What if <function> returns something other than true or false?
 * Examples:
-*   _.filter([1,2,3,4,5], function(x){return x%2 === 0}) -> [2,4]
+*   _.filter([1,2,3,4,5], function(x){ return x%2 === 0; }) -> [2,4]
 * Extra Credit:
 *   use _.each in your implementation
 */
@@ -152,7 +152,7 @@ var _ = {};
 *   3) save the return value of each <function> call in a new array
 *   4) return the new array
 * Examples:
-*   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
+*   _.map([1,2,3,4], function(e){ return e * 2; }) -> [2,4,6,8]
 */
 
 
@@ -169,7 +169,7 @@ var _ = {};
 * HINT: This is the logical inverse of _.filter() - how can you use it in your implementation?
 *
 * Examples:
-*   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
+*   _.reject([1,2,3,4,5], function(e){ return e%2 === 0}; ) -> [1,3,5]
 */
 
 
@@ -211,8 +211,8 @@ var _ = {};
 *   1) what if <function> doesn't return a boolean
 *   2) What if <function> is not given?
 * Examples:
-*   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
-*   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
+*   _.every([2,4,6], function(e){ return e % 2 === 0}; ) -> true
+*   _.every([1,2,3], function(e){ return e % 2 === 0}; ) -> false
 */
 
 
@@ -234,8 +234,8 @@ var _ = {};
 *   1) what if <function> doesn't return a boolean
 *   2) What if <function> is not given?
 * Examples:
-*   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
-*   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
+*   _.some([1,3,5], function(e){ return e % 2 === 0}; ) -> false
+*   _.some([1,2,3], function(e){ return e % 2 === 0}; ) -> true
 */
 
 

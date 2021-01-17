@@ -11,7 +11,6 @@ This means that if we're confused about how a function should work, we can check
  - Notice that all the tests are failing. :)
  - Open up underpants-lite.js in a text editor and follow the instructions.
  - Make all the tests pass!!
- - Open underpants.html in a text editor to view the code that runs the tests.
 
 ## Links and Resources
 

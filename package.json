@@ -1,6 +1,6 @@
 {
   "name": "underpants",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "This activity is essentially a re-write of [underscore.js](http://underscorejs.org/).",
   "main": "underpants-lite.js",

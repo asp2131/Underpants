@@ -348,6 +348,47 @@ _.some = function(collection, func){
     return bool;
 }
 
+/** _.reduce
+ * Arguments:
+ *  1) An array
+ * 2) A function
+ * 3) A seed
+ * Objectives:
+ *  1) Call <function> for every element in <array> passing the arguments:
+ *     previous result, element, index
+ * 2) Use the return value of <function> as the "previous result"
+ *   for the next iteration
+ * 3) On the very first iteration, use <seed> as the "previous result"
+ * 4) If no <seed> was given, use the first element/value of <array> as <seed>
+ * 5) After the last iteration, return the return value of the final <function> call
+ * Edge Cases:
+ * 1) What if <seed> is not given?
+ * Examples:
+ *  _.reduce([1,2,3], function(prev, curr){ return prev + curr}; ) -> 6
+ * _.reduce([1,2,3], function(prev, curr){ return prev + curr}, 4); ) -> 10
+ * _.reduce([1,2,3], function(prev, curr){ return prev + curr}, 'a'); ) -> 'a123'
+ * _.reduce([1,2,3], function(prev, curr){ return prev + curr}, 0); ) -> 6
+ * 
+ * 
+
+*/
+
+_.reduce = function(array, func, seed){
+    var previousResult;
+    if (seed === undefined){
+        previousResult = array[0];
+        for (var i = 1; i < array.length; i++){
+            previousResult = func(previousResult, array[i], i);
+        }
+    } else {
+        previousResult = seed;
+        for (var i = 0; i < array.length; i++){
+            previousResult = func(previousResult, array[i], i);
+        }
+    }
+    return previousResult;
+}
+
 
 /** _.pluck
 * Arguments:
@@ -373,7 +414,8 @@ _.pluck = function(arrayOfObjects, property){
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-if((typeof process !== 'undefined') ) {
+if((typeof process !== 'undefined') &&
+   (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports = _;
 }

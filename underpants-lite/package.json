@@ -1,7 +1,7 @@
 {
-  "name": "underpants",
+  "name": "ap-underpants-lite",
   "version": "1.0.0",
-  "private": false,
+  "private": true,
   "description": "This activity is essentially a re-write of [underscore.js](http://underscorejs.org/).",
   "main": "underpants-lite.js",
   "directories": {
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/OperationSpark/underpants-lite.git"
   },
-  "author": "asp2131",
+  "author": "akin pounds",
   "license": "CC",
   "bugs": {
     "url": "https://github.com/OperationSpark/underpants-lite/issues"

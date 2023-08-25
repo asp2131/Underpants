@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OperationSpark/underpants-lite.git"
+    "url": "git+https://github.com/asp2131/Underpants.git"
   },
   "author": "asp2131",
   "license": "CC",
   "bugs": {
-    "url": "https://github.com/OperationSpark/underpants-lite/issues"
+    "url": "https://github.com/asp2131/Underpants/issues"
   },
-  "homepage": "https://github.com/OperationSpark/underpants-lite#readme",
+  "homepage": "https://github.com/asp2131/Underpants/",
   "devDependencies": {
     "chai": "^3.5.0",
     "istanbul": "^0.4.5",
